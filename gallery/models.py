@@ -20,7 +20,7 @@ class Collection(models.Model):
 
 
 class Artwork(models.Model):
-    artist_name = models.ManyToManyField(Artist)
+    artist_name = models.ForeignKey('Artist', on_delete=models.CASCADE)
     artwork_title = models.CharField(max_length=50)
     artwork_description = models.CharField(max_length=280)
     created_date = models.DateTimeField(default=timezone.now)
